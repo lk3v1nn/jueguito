@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra papel o tijera</title>
+    <script>
+        //LISTA DE OPCIONES
+        const opciones = {
+            1: "Piedra",
+            2: "Papel",
+            3: "Tijera"
+        }
+
+        function combate(){
+            if (PC == jugador){
+                alert("Empate");
+            } else if ((PC == 1 && jugador == 2) || (PC == 2 && jugador== 3) ||(PC == 3 && jugador == 1)){
+                alert("Ganaste");
+                ganado+=1;
+            } else {
+                alert("Perdiste");
+                perdido+=1;
+            }
+        }
+
+        let ganado = 0;
+        let perdido = 0;
+        let jugadas = parseInt(prompt("¿Cuantas veces debe ganar el campeon?: "))
+        alert(jugadas)
+        while(ganado < jugadas && perdido < jugadas){
+            //ELECCION JUGADOR
+            let jugador = parseInt(prompt ("Elije: \n1 piedra\n2 papel\n3 tijera"));
+            alert(opciones[jugador])
+            //ELECCION PC
+            let PC = parseInt(Math.random(3)*3) +1
+            alert(opciones[PC])
+            combate();
+        }
+        document.write("WIN: " + ganado + " LOSE: " + perdido);
+
+    </script>
+</head>
+<body>
+    <h1>Piedra papel o tijera</h1>
+</body>
+</html>
