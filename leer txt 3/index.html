@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es  ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="StyleSheet" href="arrastrarArchivo.css">
+    <link rel="StyleSheet" href="estilos.css">
+    
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Proyecto compiladores</h1>
+        </div>
+    </header>
+
+    <div class="dividir contenedor contenedor1">
+        <script src="leertxt.js"></script>
+        <div class="areaParaArrastrar">
+            <p>Arrastre un archivo de texto</p>
+            <span>o</span>
+            <button>Selecciona tus archivos</button>
+            <input type="file" id="txt" onchange="leertxt()" hidden>
+        </div>
+        <div id="vistaPrevia"></div>
+        <div" class="cuadro">
+            <p id="text"></p>
+        </div>
+    </div>
+
+    <div class="dividir contenedor contenedor2">
+        <h3>Resultado del compilador</h3>
+        <button onclick="ola()">presioname mano</button>
+        <p id="resultadoCadena"></p>
+    </div>
+    <script src="archivo2.js"></script>    
+    <script src="arrastrarArchivo.js"></script>
+
+</body>
+</html>
