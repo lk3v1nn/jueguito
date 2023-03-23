@@ -36,8 +36,3 @@ areaParaArrastrar.addEventListener('drop', (e) =>{
     areaParaArrastrar.classList.remove('activo');
     TextP.innerHTML = 'Archivo cargado';
 });
-
-todo.addEventListener('drop', (e) =>{
-    e.preventDefault();
-});
-
