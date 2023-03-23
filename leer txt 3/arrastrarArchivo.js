@@ -1,22 +1,17 @@
-
-const areaParaArrastrar = document.querySelector('.areaParaArrastrar');
-const TextP = areaParaArrastrar.querySelector('p');
-const button = areaParaArrastrar.querySelector("button");
-const input = areaParaArrastrar.querySelector('#txt');
-let archivo;
 const todo = document.querySelector('body');
-
-
-button.addEventListener("click", () => {
-    input.click();
+todo.addEventListener('drop', (e) =>{
+    e.preventDefault();
 });
 
-input.addEventListener('change', ()=>{
-    archivo = this.archivo;
-    areaParaArrastrar.classList.add('activo');
-   // mostrarArchivo(archivo);
-    areaParaArrastrar.classList.remove('activo');
-})
+
+const areaParaArrastrar = document.querySelector('.areaParaArrastrar');
+const TextP = areaParaArrastrar.querySelector('h3');
+const input = areaParaArrastrar.querySelector('input');
+// const button = areaParaArrastrar.querySelector("button");
+
+// button.addEventListener("click", () => {
+//     input.click();
+// });
 
 //Evento que se activa cuando arrastre adentro de areaParaArrastrar
 areaParaArrastrar.addEventListener('dragover', (e)=>{
@@ -33,6 +28,9 @@ areaParaArrastrar.addEventListener('dragleave', (e)=>{
 //Evento se activa cunado suelto un elemento dentro de areaParaArrastrar
 areaParaArrastrar.addEventListener('drop', (e) =>{
     e.preventDefault();
-    areaParaArrastrar.classList.remove('activo');
-    TextP.innerHTML = 'Archivo cargado';
+    input.files = e.dataTransfer.files;
+    areaParaArrastrar.classList.add('activo');
+    //TextP.innerHTML = 'Archivo cargado';
+    leertxt();
 });
+
