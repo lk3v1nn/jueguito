@@ -36,9 +36,11 @@ header{
     margin: 1rem;
 }
 .tablas{
+    float: left;
+}
+table.activo{
     margin: 0.5rem 0;
     padding: 0.5rem;
     border: 3px solid black;
-    float: left;
 }
 

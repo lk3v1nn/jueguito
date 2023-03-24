@@ -1,10 +1,25 @@
-    const tabla = document.querySelector('#text');
-    
-    function ola(){
-        alert(tabla.innerHTML);
-    }
+function insertaDatosTabla(tabla, dato){
+    // Ubica la tabla
+    let table = document.getElementById(tabla);
+    // Ubica body
+    let body = table.querySelector('tbody');
+    // Inserta una fila
+    let insertarFila = body.insertRow();
+    insertarFila.innerHTML;
+    // Inserta columnas de la fila (datos)
+    let insertarColumna = insertarFila.insertCell();
+    insertarColumna.innerHTML = dato;
+}
 
-    
+function ReinsertaTabla() {
+    const tabla1 = document.getElementById('tabla1');
+    const tabla2 = document.getElementById('tabla2');
+    tabla1.innerHTML = "<thead><tr>Mayus</tr></thead><tbody></tbody>";
+    tabla2.innerHTML = "<thead><tr>Mayus</tr></thead><tbody></tbody>";
+    tabla1.classList.add('activo');
+    tabla2.classList.add('activo');
+}
+
 function Es_Mayuscula(letra)
 {
     if (letra == letra.toUpperCase()){
@@ -14,12 +29,12 @@ function Es_Mayuscula(letra)
     }
 }
 
-
 function olaf(){
-    eliminarTabla();
+    ReinsertaTabla()
+    const txt = document.querySelector('#text');
+    let letras = txt.innerHTML; // Datos del documento
     let k=0, l=0; // Contadores
     let mayus=[], minus=[]; // Listas que guardaran las letras
-    let letras = tabla.innerHTML; // Datos del documento
 
     //REMPLAZA LOS CARACTERES QUE NO SE VAN A EVALUAR
     letras = letras.replace(/(\n)/g, ''); // Saltos de linea
@@ -41,36 +56,14 @@ function olaf(){
         }
     }
 
-    console.log('Cadena');
-    console.log(letras);
-    console.log('Mayusculas')
+    // Muestra las mayusculas en la tabla
     for (i=0; i < mayus.length; i++){
         console.log(mayus[i]);
-        insertaTabla('tabla1', mayus[i]);
+        insertaDatosTabla('tabla1', mayus[i]);
     }
-    console.log('Minusculas')
+    // Muestra las minusculas en la tabla
     for (i=0; i < minus.length; i++){
         console.log(minus[i]);
-        insertaTabla('tabla2', minus[i]);
+        insertaDatosTabla('tabla2', minus[i]);
     }
-}
-
-function insertaTabla(tabla, dato){
-    // Ubica la tabla
-    let tablas = document.getElementById(tabla);
-    // Inserta una fila
-    let insertarFila = tablas.insertRow();
-    insertarFila.innerHTML;
-    // Inserta los datos de la fila
-    let insertarColumna = insertarFila.insertCell();
-    insertarColumna.innerHTML = dato;
-}
-
-function eliminarTabla(){
-    let tds = document.querySelectorAll('tr');
-          for(i=0;i < tds.length; i++){
-         let bfila = document.querySelector('tbody');
-        let fila = bfila.querySelector('tr')
-         fila.remove();
-     }
 }
