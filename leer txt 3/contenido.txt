@@ -1,4 +1,2 @@
-aaaaaaaaaa aa
-bbbbbbbbbb
-
-cccccccccc
+S = 'a' | 'b'
+S = 'a''S''c'
