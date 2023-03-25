@@ -14,8 +14,8 @@ function insertaDatosTabla(tabla, dato){
 function ReinsertaTabla() {
     const tabla1 = document.getElementById('tabla1');
     const tabla2 = document.getElementById('tabla2');
-    tabla1.innerHTML = "<thead><tr>Mayus</tr></thead><tbody></tbody>";
-    tabla2.innerHTML = "<thead><tr>Mayus</tr></thead><tbody></tbody>";
+    tabla1.innerHTML = "<thead><tr><td>V<td></tr></thead><tbody></tbody>";
+    tabla2.innerHTML = "<thead><tr><td>T<td></tr></thead><tbody></tbody>";
     tabla1.classList.add('activo');
     tabla2.classList.add('activo');
 }
@@ -42,7 +42,11 @@ function olaf(){
     letras = letras.replace('<br>', ''); // Saltos de linea
 
     //SEPARA TODOS LOS CARACTERES DENTRO DE UN ARRAY
-    let lista = letras.split('');
+    let listaSimple = letras.split('');
+
+    // Elimina los caracteres duplicados
+    const sinDuplicados = new Set(listaSimple);
+    let lista = [...sinDuplicados];
 
     //RECORRE TODA LA LISTA PARA SEPARA MAYUSCULAS Y MINUSCULAS
     for (let i = 0; i < lista.length; i++){
@@ -66,4 +70,7 @@ function olaf(){
         console.log(minus[i]);
         insertaDatosTabla('tabla2', minus[i]);
     }
+    // Oculta el boton procesar
+    const boton = document.getElementById('procesar');
+    boton.setAttribute('hidden', true);
 }

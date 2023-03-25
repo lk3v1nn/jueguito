@@ -2,7 +2,7 @@
     height: 100%;
     margin: 5%;
     width: 90%;
-    border: 4px dashed #ddd;
+    border: 4px dashed rgb(66, 148, 182);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -10,18 +10,10 @@
     flex-direction: column;
 }
 .areaParaArrastrar.activo{
-    background-color: rgba(0, 255, 217, 0.114);
-    color: rgb(17, 105, 177);
-    border: 4px dashed #618ac9;
+    background-color: rgb(66, 148, 182);	
+    color: rgb(242, 242, 242);
+    border: 4px dashed rgb(242, 242, 242);
 }
-.areaParaArrastrar button{
-    padding: 5px 15px;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    background-color: #618ac9;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
+.areaParaArrastrar h3{
+    font-size: 2.5rem;
 }

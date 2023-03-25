@@ -32,5 +32,8 @@ areaParaArrastrar.addEventListener('drop', (e) =>{
     areaParaArrastrar.classList.add('activo');
     //TextP.innerHTML = 'Archivo cargado';
     leertxt();
+    // Muestra el boton oculto de Procesar
+    const boton = document.getElementById('procesar');
+    boton.removeAttribute('hidden');
 });
 
