@@ -29,7 +29,7 @@ function Es_Mayuscula(letra)
     }
 }
 
-function olaf(){
+function V_T(){
     ReinsertaTabla()
     const txt = document.querySelector('#text');
     let letras = txt.innerHTML; // Datos del documento

@@ -1,6 +1,5 @@
 .areaParaArrastrar{
-    height: 100%;
-    margin: 5%;
+    height: 90%;
     width: 90%;
     border: 4px dashed rgb(66, 148, 182);
     border-radius: 5px;
@@ -11,8 +10,8 @@
     
 }
 .areaParaArrastrar.activo{
-    background-color: rgb(66, 148, 182);	
-    color: rgb(242, 242, 242);
+    /* background-color: rgb(66, 148, 182);	 */
+    color: rgb(66, 148, 182);
     border: 4px dashed rgb(242, 242, 242);
 }
 .areaParaArrastrar h3{
