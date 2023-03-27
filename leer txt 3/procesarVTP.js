@@ -2,9 +2,9 @@ function ReinsertaTabla() {
     const tabla1 = document.getElementById('tabla1');
     const tabla2 = document.getElementById('tabla2');
     const tabla3 = document.getElementById('tabla3');
-    tabla1.innerHTML = "<thead><tr><td>V</td></tr></thead><tbody></tbody>";
-    tabla2.innerHTML = "<thead><tr><td>T</td></tr></thead><tbody></tbody>";
-    tabla3.innerHTML = "<thead><tr><td> Var </td><td> Produc </td></tr></thead><tbody></tbody>";
+    tabla1.innerHTML = "<thead><tr><td>Variables</td></tr></thead><tbody></tbody>";
+    tabla2.innerHTML = "<thead><tr><td>Terminales</td></tr></thead><tbody></tbody>";
+    tabla3.innerHTML = "<thead><tr><td>Variables</td><td>Producciones</td></tr></thead><tbody></tbody>";
 }
 
 function insertaDatosTabla1_2(tabla, dato){
@@ -92,6 +92,7 @@ function V_T(){
 function V_P(){
     const txt = document.querySelector('#text');
     let letras = txt.innerHTML; // Datos del documento (Las gramaticas del .txt)
+    letras = letras.replace(/([ '])/g, '');
     let gramaticas = letras.split('\n'); // Separo la cadena por saltos de linea
     gramaticas = gramaticas.map(e => e.replace(/<br>/g, '')); //Map ejecuta la funcion para cada elemento del array
     for (let i=0; i < gramaticas.length; i++){ // Recorre cada gramatica de la lista
