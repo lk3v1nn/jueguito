@@ -47,29 +47,32 @@ header{
     margin: 1rem;
 }
 .tablas{
+    margin: 10px;
     display: flex;
     align-items: flex-start;
-}
-table{
-    margin: 0.5rem 0.4rem;
-    border: 3px solid rgb(66, 148, 182);
-    padding: 0;
+    justify-content: center;
 }
 thead{
-    margin: 0;
     display: flex;
-    padding: 0.5rem;
     background-color:   rgb(66, 148, 182);
     color: rgb(242, 242, 242);;
-    font-size: 1.5rem;
+    
 }
 tbody{
-    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0.5rem;
-    background-color: rgb(242, 242, 242);
+}
+tr{
+    display: flex;
+    justify-content: space-around;
+    border-collapse: collapse;
+    border: 1px solid #000000;
+}
+td{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    padding: 0.5rem; 
 }
 button{
     margin: 0;
@@ -84,5 +87,5 @@ button{
 }
 
 img{
-    width: 200px;
+    width: 95%;
 }
