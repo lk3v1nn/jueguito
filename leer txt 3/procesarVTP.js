@@ -51,10 +51,10 @@ function V_T(){
     let mayus=[], minus=[]; // Listas que guardaran las letras
 
     //REMPLAZA LOS CARACTERES QUE NO SE VAN A EVALUAR
-    letras = letras.replace(/(\n)/g, ''); // Saltos de linea
-    letras = letras.replace(/([ ='|])/g, ''); // Simbolos
     letras = letras.replace('<br>', ''); // Saltos de linea
-
+    letras = letras.replace(/(\n)/g, ''); // Saltos de linea
+    letras = letras.replace(/([<> ='|])/g, ''); // Simbolos
+    
     //SEPARA TODOS LOS CARACTERES DENTRO DE UN ARRAY
     let listaSimple = letras.split('');
 
