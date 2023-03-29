@@ -106,4 +106,5 @@ function V_P(){
             insertaDatosTabla3('tabla3', VP[0], VP[1]); // Inserta en la tabla la Variable y la Produccion
         }
     }
+    animEntrada();
 }

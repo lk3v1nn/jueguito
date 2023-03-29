@@ -96,5 +96,6 @@ button{
 }
 
 img{
-    width: 95%;
+    border: solid;
+    width: 90%;
 }
