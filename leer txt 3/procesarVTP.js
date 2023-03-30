@@ -90,6 +90,7 @@ function V_T(){
 }
 
 function V_P(){
+    animEntrada();
     const txt = document.querySelector('#text');
     let letras = txt.innerHTML; // Datos del documento (Las gramaticas del .txt)
     letras = letras.replace(/([ '])/g, '');
@@ -106,5 +107,4 @@ function V_P(){
             insertaDatosTabla3('tabla3', VP[0], VP[1]); // Inserta en la tabla la Variable y la Produccion
         }
     }
-    animEntrada();
 }
