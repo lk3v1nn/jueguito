@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compi</title>
+    <link rel="icon" href="/img/logo.ico"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="StyleSheet" href="arrastrarArchivo.css">
-    <link rel="StyleSheet" href="estilos.css">
+    <link rel="StyleSheet" href="/estilos/arrastrarArchivo.css">
+    <link rel="StyleSheet" href="estilos/estilos.css">
+    <link rel="StyleSheet" href="estilos/deslizantes.css">
     
 </head>
 <body>
     <header>
         <div>
-            <h1>Proyecto compiladores</h1>
+            <h1>Proyecto Compiladores</h1>
         </div>
     </header>
 
@@ -30,8 +32,7 @@
             <div class="subdivision">
                 <div class="subdivision2">
                     <div class="scroll">
-                        <button id="procesar" onclick="V_T();V_P()" hidden>Procesar archivo</button>
-                        <button onclick="animEntrada()">animacion</button>
+                        <button id="procesar" onclick="setTimeout(todo, 2000)" hidden>Procesar archivo</button>
                         <div class="tablas">
                             <table id="tabla1"></table>
                             <table id="tabla2"></table>
@@ -45,14 +46,28 @@
                     <h1>Proximas funciones aquí</h1>
                 </div> -->
             </div>
-            <div class="subdivision">
-                <img src="imagen.png">
+            <div class="subdivision scrollSecciones">
+                <img id="img1" src="img/imagen.png">
+                <!-- <div class="inicio"><h3>inicio</h3></div>
+                <div class="secciones">
+                    <section class="seccion seccion1">
+                        <h2>SECCION 1</h2>
+                    </section>
+                    <section class="seccion seccion2">
+                        <img id="img2" src="img/o.png">
+                        <h2>SECCION 2</h2>
+                    </section>
+                    <section class="seccion seccion3">
+                        <h2>SECCION 3</h2>
+                    </section>
+                </div>
+                <div class="final"> <h3>final</h3> <p>xd</p></div> -->
             </div>
         </div>
-    <script src="arrastrarArchivo.js"></script>
-    <script src="leertxt.js"></script>
-    <script src="procesarVTP.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> // Libreria Gsap
-    <script src="animaciones.js"></script>
+    <script src="/funcionalidades/arrastrarArchivo.js"></script>
+    <script src="funcionalidades/leertxt.js"></script>
+    <script src="/funcionalidades/procesarVTP.js"></script>    
+    <script src="/funcionalidades/animProcesar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script> <!--libreria Gsap -->
 </body>
 </html>

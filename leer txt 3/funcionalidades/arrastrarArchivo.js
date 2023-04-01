@@ -1,4 +1,4 @@
-const todo = document.querySelector('body');
+const todo = document.querySelector('html');
 todo.addEventListener('drop', (e) =>{
     e.preventDefault();
 });
@@ -13,17 +13,17 @@ const input = areaParaArrastrar.querySelector('input');
 //     input.click();
 // });
 
+//Evento que se activa cuando arrastre afuera de areaParaArrastrarraArrastrar
+areaParaArrastrar.addEventListener('dragleave', (e)=>{
+    e.preventDefault();
+    areaParaArrastrar.classList.remove('activo');
+    // TextP.innerHTML = 'Arrastra aqui';
+});
 //Evento que se activa cuando arrastre adentro de areaParaArrastrar
 areaParaArrastrar.addEventListener('dragover', (e)=>{
     e.preventDefault();
     areaParaArrastrar.classList.add('activo');
     TextP.innerHTML = 'Suelta para carga el archivo';
-});
-//Evento que se activa cuando arrastre afuera de areaParaArrastrarraArrastrar
-areaParaArrastrar.addEventListener('dragleave', (e)=>{
-    e.preventDefault();
-    areaParaArrastrar.classList.remove('activo');
-    TextP.innerHTML = 'Arrastra aqui';
 });
 //Evento se activa cunado suelto un elemento dentro de areaParaArrastrar
 areaParaArrastrar.addEventListener('drop', (e) =>{
@@ -34,6 +34,7 @@ areaParaArrastrar.addEventListener('drop', (e) =>{
     leertxt();
     // Muestra el boton oculto de Procesar
     const boton = document.getElementById('procesar');
-    boton.removeAttribute('hidden');
+    // boton.removeAttribute('hidden');
+    setTimeout(ejtodo, 200);
 });
 

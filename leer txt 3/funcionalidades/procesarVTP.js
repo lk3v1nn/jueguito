@@ -90,7 +90,6 @@ function V_T(){
 }
 
 function V_P(){
-    animEntrada();
     const txt = document.querySelector('#text');
     let letras = txt.innerHTML; // Datos del documento (Las gramaticas del .txt)
     letras = letras.replace(/([ '])/g, '');
@@ -108,3 +107,11 @@ function V_P(){
         }
     }
 }
+
+function ejtodo(){
+    animEntrada();
+    V_T();
+    V_P();
+}
+
+

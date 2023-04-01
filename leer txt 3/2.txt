@@ -1,0 +1,8 @@
+S = a|if
+S1 = Sa
+S = e
+S = e|ab
+S = aSb
+S = epsilon
+S = a| b | SS |e
+X = d|c| w

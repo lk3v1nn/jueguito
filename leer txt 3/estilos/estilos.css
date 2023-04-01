@@ -1,5 +1,6 @@
 html, body{
     height: 100%;
+    overflow: hidden;
 }
 * {
     font-family: 'Roboto', sans-serif;
@@ -8,16 +9,18 @@ html, body{
     box-sizing: border-box;
 }
 header{
-    height: auto;
+    height: 10%;
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(66, 148, 182);
-    color: white;
+    background-color: rgb(242, 242, 242);
+    color: rgba(0, 0, 0, 0.6);
     font-size: 1.5rem;
+    border-bottom: solid rgb(66, 148, 182);
 }
 .contenedor{
+    position: relative;
     height: 90%;
     display: flex;
     justify-content: center;
@@ -33,28 +36,35 @@ header{
     /* background-color: rgb(255, 255, 153); */
 }
 .subdivision{
+    position: relative;
     height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    /* flex-wrap: wrap; */
     border-left: 1px solid rgb(66, 148, 182);
 }
 .subdivision2{
-    /* height: 50%; */
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
     /* border-bottom: 1px solid rgb(66, 148, 182); */
 }
 .scroll{
-    height: 100%;
-    /* overflow: scroll; */
+    
+        padding: 15px;
+        overflow: scroll;
 }
+.scroll::-webkit-scrollbar {
+    display: none;
+    background-color: lightblue;
+  }
 #text{
     margin: 1rem;
 }
@@ -96,6 +106,10 @@ button{
 }
 
 img{
-    border: solid;
-    width: 90%;
+    position: absolute;
+    width: 75%;
+    border: solid rgba(0, 0, 0, 0.6);
+}
+#img2{
+    display: none;
 }
