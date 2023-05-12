@@ -78,6 +78,6 @@ function CrearMensajes(){
     seccionMensajes.appendChild(NuevoMensaje);
 }
 
-function CombatePokemon(){
-    if (ataqueJugador)
-}
+// function CombatePokemon(){
+//     if (ataqueJugador)
+// }
