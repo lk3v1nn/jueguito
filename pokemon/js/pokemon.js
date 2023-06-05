@@ -6,6 +6,7 @@ let pokemonJugador;
 let pokemonEnemigo;
 let ataqueJugador;
 let ataqueEnemigo;
+let resultadoBatalla;
 
 function iniciarJuego(){
     let pokemonSeleccionado = document.getElementById('seleccionar-monstruo');
@@ -48,19 +49,19 @@ function ElegirAtaquePokemon(){
     botonFuego.addEventListener('click', ()=>{
         ataqueJugador = listaAtaquesDisponibles[0];
         ElegirAtaquePokemonEnemigo();
-        CrearMensajes();
+        CombatePokemon(ataqueJugador, ataqueEnemigo);
     });
     
     botonAgua.addEventListener('click', ()=>{
         ataqueJugador = listaAtaquesDisponibles[1];
         ElegirAtaquePokemonEnemigo();
-        CrearMensajes();
+        CombatePokemon(ataqueJugador, ataqueEnemigo);
     });
     
     botonTierra.addEventListener('click', ()=>{
         ataqueJugador = listaAtaquesDisponibles[2];
         ElegirAtaquePokemonEnemigo();
-        CrearMensajes();
+        CombatePokemon(ataqueJugador, ataqueEnemigo);
     });
 }
 
@@ -70,14 +71,32 @@ function ElegirAtaquePokemonEnemigo(){
     return ataqueEnemigo;
 }
 
-function CrearMensajes(){
-    let NuevoMensaje = document.createElement('p');
-    NuevoMensaje.innerHTML = 'tu '+ pokemonJugador + ' ataco con ' + ataqueJugador + ', el ' + pokemonEnemigo + ' del enemigo ataco con ' + ataqueEnemigo + ' - PENDIENTE';
+function CombatePokemon(ataqueJugador, ataqueEnemigo){
+    // agua fuego       WIN
+    // agua tierra      LOSE
+    // fuego tierra     WIN
+    // Fuego agua       LOSE
+    // tierra agua      WIN
+    // tierra fuego     LOSE
 
-    let seccionMensajes = document.getElementById('mensajes');
-    seccionMensajes.appendChild(NuevoMensaje);
+    if (ataqueJugador == ataqueEnemigo){
+        resultadoBatalla = 'EMPATE';
+    } 
+    else if (ataqueJugador == listaAtaquesDisponibles[1] && ataqueEnemigo == listaAtaquesDisponibles[0] ||
+                ataqueJugador == listaAtaquesDisponibles[0] && ataqueEnemigo == listaAtaquesDisponibles[2] ||
+                ataqueJugador == listaAtaquesDisponibles[2] && ataqueEnemigo == listaAtaquesDisponibles[1] ){
+        resultadoBatalla = 'GANASTE!';
+    }
+    else {
+        resultadoBatalla = 'GANO EL ENEMIGO';
+    }
+    CrearMensajes();
 }
 
-// function CombatePokemon(){
-//     if (ataqueJugador)
-// }
+function CrearMensajes(){
+    let NuevoMensaje = document.createElement('p');
+    NuevoMensaje.innerHTML = 'Tu '+ pokemonJugador + ' ataco con ' + ataqueJugador + ', el ' + pokemonEnemigo + ' del enemigo ataco con ' + ataqueEnemigo + ' -> ' + resultadoBatalla;
+    let seccionMensajes = document.getElementById('mensajes');
+    seccionMensajes.appendChild(NuevoMensaje);
+}   
+
