@@ -58,7 +58,7 @@ function SeleccionarPokemonEnemigo(){
 }
 
 function ElegirAtaquePokemon(){
-    document.getElementById('seleccionar-ataque').style='display:block';
+    document.getElementById('seleccionar-ataque').style.display = 'block';
 
     let botonFuego = document.getElementById('boton-fuego');
     let botonAgua = document.getElementById('boton-agua');
@@ -148,7 +148,7 @@ function crearMensajeGanador(mensaje){
     let seccionMensajes = document.getElementById('mensajes');
     seccionMensajes.appendChild(NuevoMensaje);
     deshabilitarBotonesAtaque();
-    document.getElementById('bReiniciar').style = 'display: block';
+    document.getElementById('bReiniciar').style.display = 'block';
 } 
 
 function deshabilitarBotonesAtaque(){
