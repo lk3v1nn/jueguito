@@ -14,6 +14,9 @@ function iniciarJuego(){
     let pokemonSeleccionado = document.getElementById('seleccionar-monstruo');
     let botonSeleccionarPokemon = pokemonSeleccionado.querySelector('button');
     botonSeleccionarPokemon.addEventListener('click', SeleccionarPokemonJugador);
+
+    let buttonReiniciar = document.getElementById('bReiniciar');
+    buttonReiniciar.addEventListener('click', reinciarJuego);
 }
 
 function SeleccionarPokemonJugador(){
@@ -23,13 +26,24 @@ function SeleccionarPokemonJugador(){
                     document.getElementById('Bulbasour').checked ? 'Bulbasour' : 
                     document.getElementById('Volcanion').checked ? 'Volcanion' : 
                     document.getElementById('Rattata').checked ? 'Rattata' : 
-                    document.getElementById('Sydos').checked ? 'Sydos' : 'Seleccione un pokemon';
+                    document.getElementById('Sydos').checked ? 'Sydos' : '';
     
     let spanNombrePokemon = document.getElementById('span-nombre-pokemon');
     spanNombrePokemon.innerHTML = pokemonJugador;
+    
+    deshabilitarBotonSelectPokemon();
+}
 
-    SeleccionarPokemonEnemigo();
-    ElegirAtaquePokemon();
+function deshabilitarBotonSelectPokemon(){
+    if (pokemonJugador == ''){ 
+        alert('Debes seleccionar un pokemon');
+    }else {
+        let botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
+        botonSeleccionarPokemon.disabled = true;
+
+        SeleccionarPokemonEnemigo();
+        ElegirAtaquePokemon();
+    }
 }
 
 function SeleccionarPokemonEnemigo(){
@@ -112,6 +126,7 @@ function controlVidasEnemigo(vida){
 function revisarGanador(){
     if (vidasJugador == 0) {
         crearMensajeGanador('Has perdido 😭😭😭');
+
     }
     else if (vidasEnemigo == 0) {
         crearMensajeGanador('Has ganado 🎉🎉🎉');
@@ -130,4 +145,15 @@ function crearMensajeGanador(mensaje){
     NuevoMensaje.innerHTML = mensaje;
     let seccionMensajes = document.getElementById('mensajes');
     seccionMensajes.appendChild(NuevoMensaje);
+    deshabilitarBotonesAtaque();
 } 
+
+function deshabilitarBotonesAtaque(){
+    document.getElementById('boton-fuego').disabled = true;
+    document.getElementById('boton-agua').disabled = true;
+    document.getElementById('boton-tierra').disabled = true;
+}
+
+function reinciarJuego(){
+    location.reload();
+}
