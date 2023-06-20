@@ -1,4 +1,7 @@
-h1 {
+.titulo {
     font-weight: 100;
-    color: yellow;
+    color: rgb(249, 255, 67);
+    width: 360px;
+    height: 50px;
+    background-color: black;
 }
