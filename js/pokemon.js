@@ -30,17 +30,16 @@ function SeleccionarPokemonJugador(){
     
     let spanNombrePokemon = document.getElementById('span-nombre-pokemon');
     spanNombrePokemon.innerHTML = pokemonJugador;
-    
-    deshabilitarBotonSelectPokemon();
+    deshabilitarSelectPokemon();
 }
 
-function deshabilitarBotonSelectPokemon(){
+function deshabilitarSelectPokemon(){
     if (pokemonJugador == ''){ 
         alert('Debes seleccionar un pokemon');
     }else {
         let botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
         botonSeleccionarPokemon.disabled = true;
-
+        document.getElementById('seleccionar-monstruo').style.display = 'none';
         SeleccionarPokemonEnemigo();
         ElegirAtaquePokemon();
     }
@@ -59,6 +58,7 @@ function SeleccionarPokemonEnemigo(){
 
 function ElegirAtaquePokemon(){
     document.getElementById('seleccionar-ataque').style.display = 'block';
+    mensajeDeVoz('Escoge un ataque');
 
     let botonFuego = document.getElementById('boton-fuego');
     let botonAgua = document.getElementById('boton-agua');
@@ -127,10 +127,11 @@ function controlVidasEnemigo(vida){
 
 function revisarGanador(){
     if (vidasJugador == 0) {
+        mensajeDeVoz('PERDISTE');
         crearMensajeGanador('Has perdido 😭😭😭');
-
     }
     else if (vidasEnemigo == 0) {
+        mensajeDeVoz('GANASTE');
         crearMensajeGanador('Has ganado 🎉🎉🎉');
     }
 }
@@ -159,4 +160,15 @@ function deshabilitarBotonesAtaque(){
 
 function reinciarJuego(){
     location.reload();
+}
+
+function mensajeDeVoz(texto){
+    var synthesis = window.speechSynthesis;
+
+    // Crear mensaje de voz
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = texto;
+  
+    // Reproducir mensaje de voz
+    synthesis.speak(msg);
 }

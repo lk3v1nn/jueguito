@@ -7,31 +7,36 @@
     <title>POKEMON</title>
     <script src="js/pokemon.js"></script>
     <link rel="stylesheet" href="css/stilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>🪴💧🔥🪴💧🔥🪴💧🔥</h1><h1 class="titulo" >🪴POKEMON🔥</h1> <h1>🪴💧🔥🪴💧🔥🪴💧🔥</h1>
+    <br>
+    <section id="seleccionar-monstruo" class="cajon">
+        <h2>Escoge un pokemon</h2>
+        
+        <div id="pokemons">
+            <label for="Charmander">Charmander</label>
+            <input type="radio" name="pokemon" id="Charmander">
 
-    <h1 class="titulo" >Pokemon xD 🔥 💧 🪴</h1>
+            <label for="Vaporeon">Vaporeon</label>
+            <input type="radio" name="pokemon" id="Vaporeon">
 
-    <section id="seleccionar-monstruo">
-        <h2>Elige un pokemon aaa</h2>
+            <label for="Bulbasour">Bulbasour</label>
+            <input type="radio" name="pokemon" id="Bulbasour">
 
-        <label for="Charmander">Charmander</label>
-        <input type="radio" name="pokemon" id="Charmander">
+            <label for="Volcanion">Volcanion</label>
+            <input type="radio" name="pokemon" id="Volcanion">
 
-        <label for="Vaporeon">Vaporeon</label>
-        <input type="radio" name="pokemon" id="Vaporeon">
+            <label for="Rattata">Rattata</label>
+            <input type="radio" name="pokemon" id="Rattata">
 
-        <label for="Bulbasour">Bulbasour</label>
-        <input type="radio" name="pokemon" id="Bulbasour">
-
-        <label for="Volcanion">Volcanion</label>
-        <input type="radio" name="pokemon" id="Volcanion">
-
-        <label for="Rattata">Rattata</label>
-        <input type="radio" name="pokemon" id="Rattata">
-
-        <label for="Sydos">Sydos</label>
-        <input type="radio" name="pokemon" id="Sydos">
+            <label for="Sydos">Sydos</label>
+            <input type="radio" name="pokemon" id="Sydos">
+        </div>
+        
         <br>
         <!-- Charmander → Fuego
         Vaporeon → Agua
@@ -43,7 +48,7 @@
         <button id="boton-seleccionar-pokemon">Seleccionar</button>
     </section>
     
-    <section id="seleccionar-ataque" style="display: none;">
+    <section id="seleccionar-ataque" class="cajon" style="display: none;">
         <h2>Elige un ataque</h2>
 
         <p>Tu pokemon <span id="span-nombre-pokemon"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
