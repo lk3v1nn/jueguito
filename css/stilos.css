@@ -2,8 +2,9 @@
     color: rgb(0, 104, 196);
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
+
 body{
     background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));
     height: 100vh;
@@ -39,11 +40,18 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
-#pokemons label{
-    margin: 10px;
-    background-color: rgba(240, 248, 255, 0.6);
-    width: 100px;
+.tarjetaPokemon{
+    padding: 10px;
+    background-color: rgba(240, 248, 255, 0.3);
+    width: 120px;
     height: 100px;
+    border-radius: 5px;
 }
+
+input{
+    display: none;
+}
+  
