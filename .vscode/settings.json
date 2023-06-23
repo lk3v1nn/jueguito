@@ -1,6 +1,0 @@
-{
-    "CodeGPT.query.language": "Spanish",
-    "CodeGPT.apiKey": "OpenAI",
-    "CodeGPT.organizationId": "",
-    "CodeGPT.model": "gpt-3.5-turbo-16k"
-}
