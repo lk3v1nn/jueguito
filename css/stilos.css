@@ -55,12 +55,16 @@ body{
     border-radius: 5px;
 }
 
-    .tarjetaPokemon img{
+.tarjetaPokemon img{
     max-width: 102px;
     max-height: 75px;
 }
 
 input{
     display: none;
+}
+
+.animacionSeleccion{
+    background-color: aqua;
 }
   

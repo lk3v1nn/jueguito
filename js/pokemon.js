@@ -11,9 +11,11 @@ let vidasJugador = 3;
 let vidasEnemigo = 3;
 
 function iniciarJuego(){
-    let pokemonSeleccionado = document.getElementById('seleccionar-monstruo');
-    let botonSeleccionarPokemon = pokemonSeleccionado.querySelector('button');
-    botonSeleccionarPokemon.addEventListener('click', SeleccionarPokemonJugador);
+    let botonIniciar = document.getElementById('botonIniciar');
+    botonIniciar.addEventListener('click', ()=>{
+        SeleccionarPokemonJugador();
+        botonIniciar.style.display = 'none';
+    });
 
     let buttonReiniciar = document.getElementById('bReiniciar');
     buttonReiniciar.addEventListener('click', reinciarJuego);
@@ -21,24 +23,57 @@ function iniciarJuego(){
 
 function SeleccionarPokemonJugador(){
     
-    pokemonJugador = document.getElementById('Charmander').checked ? 'Charmander' :
-                    document.getElementById('Vaporeon').checked ? 'Vaporeon' : 
-                    document.getElementById('Bulbasour').checked ? 'Bulbasour' : 
-                    document.getElementById('Volcanion').checked ? 'Volcanion' : 
-                    document.getElementById('Rattata').checked ? 'Rattata' : 
-                    document.getElementById('Sydos').checked ? 'Sydos' : '';
-    
+    // pokemonJugador = document.getElementById('Charmander').checked ? 'Charmander' :
+    //                 document.getElementById('Vaporeon').checked ? 'Vaporeon' : 
+    //                 document.getElementById('Bulbasour').checked ? 'Bulbasour' : 
+    //                 document.getElementById('Volcanion').checked ? 'Volcanion' : 
+    //                 document.getElementById('Rattata').checked ? 'Rattata' : 
+    //                 document.getElementById('Sydos').checked ? 'Sydos' : '';
+    document.getElementById('seleccionar-monstruo').style.display = 'flex';
+
+    let Charmander = document.getElementById('Charmander');
+    let Vaporeon = document.getElementById('Vaporeon');
+    let Bulbasour = document.getElementById('Bulbasour');
+    let Volcanion = document.getElementById('Volcanion');
+    let Rattata = document.getElementById('Rattata');
+    let Sydos = document.getElementById('Sydos');
     let spanNombrePokemon = document.getElementById('span-nombre-pokemon');
-    spanNombrePokemon.innerHTML = pokemonJugador;
-    deshabilitarSelectPokemon();
+
+    function asignarPokemonALaVista(){
+        spanNombrePokemon.innerHTML = pokemonJugador;
+        deshabilitarSelectPokemon();
+    }
+
+    Charmander.addEventListener('click', () =>{
+        pokemonJugador = "Charmander";
+        asignarPokemonALaVista();
+    });
+    Vaporeon.addEventListener('click', () =>{
+        pokemonJugador = "Vaporeon";
+        asignarPokemonALaVista(pokemonJugador);
+    });
+    Bulbasour.addEventListener('click', () =>{
+        pokemonJugador = "Bulbasour";
+        asignarPokemonALaVista(pokemonJugador);
+    });
+    Volcanion.addEventListener('click', () =>{
+        pokemonJugador = "Volcanion";
+        asignarPokemonALaVista(pokemonJugador);
+    });
+    Rattata.addEventListener('click', () =>{
+        pokemonJugador = "Rattata";
+        asignarPokemonALaVista(pokemonJugador);
+    });            
+    Sydos.addEventListener('click', () =>{
+        pokemonJugador = "Sydos";
+        asignarPokemonALaVista(pokemonJugador);
+    });    
 }
 
 function deshabilitarSelectPokemon(){
     if (pokemonJugador == ''){ 
         alert('Debes seleccionar un pokemon');
     }else {
-        let botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
-        botonSeleccionarPokemon.disabled = true;
         document.getElementById('seleccionar-monstruo').style.display = 'none';
         SeleccionarPokemonEnemigo();
         ElegirAtaquePokemon();
@@ -57,7 +92,7 @@ function SeleccionarPokemonEnemigo(){
 }
 
 function ElegirAtaquePokemon(){
-    document.getElementById('seleccionar-ataque').style.display = 'block';
+    document.getElementById('seleccionar-ataque').style.display = 'flex';
     mensajeDeVoz('Escoge un ataque');
 
     let botonFuego = document.getElementById('boton-fuego');

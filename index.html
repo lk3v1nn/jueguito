@@ -17,17 +17,18 @@
     <h1 class="animate__animated animate__flip titulo" >POKEMON</h1>
     <h1 class="animate__animated animate__lightSpeedInRight">💧🔥🪴💧🔥🪴💧</h1>
     <br>
-    <section id="seleccionar-monstruo" class="animate__animated animate__zoomInUp cajon ">
+    <button id="botonIniciar">Iniciar</button>
+    <section id="seleccionar-monstruo" class="animate__animated animate__zoomInUp cajon " style="display: none;">
         <h2>Escoge un pokemon</h2>
         
         <div id="pokemons">
-                <label class="tarjetaPokemon" for="Charmander">
+                <label class="tarjetaPokemon" for="Charmander" id="lbCharmander">
                     <img src="img/charmander.png" alt="nocargo xd">
                     <p>Charmander</p>                    
                 </label>
                 <input type="radio" name="pokemon" id="Charmander">    
 
-                <label class="tarjetaPokemon" for="Vaporeon">
+                <label class="tarjetaPokemon" for="Vaporeon" id="lbVaporeon">
                     <img src="img/Vaporeon.png" alt="nocargo xd">
                     <p>Vaporeon</p>                    
                 </label>
@@ -66,7 +67,6 @@
         Rattata → Agua, Tierra
         Sydos → Tierra, Fuego -->
 
-        <button id="boton-seleccionar-pokemon">Seleccionar</button>
     </section>
     
     <section id="seleccionar-ataque" class="cajon" style="display: none;">
