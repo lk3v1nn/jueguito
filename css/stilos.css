@@ -45,7 +45,7 @@ body{
 }
 #botonIniciar:hover{
     background-color: rgb(255, 247, 0);
-    box-shadow: 3px 3px 10px 5px rgba(17, 62, 64, 0.534); /* Sombra */
+    box-shadow: 3px 3px 10px 5px rgba(251, 255, 255, 0.534); /* Sombra */
 }
 
 .cajon{
@@ -85,6 +85,10 @@ body{
     border-radius: 0px 0px 30px 0px;
 }
 
+.tarjetaPokemon:hover{
+    box-shadow: 0 0 5px 3px white;
+}
+
 .tarjetaPokemon img{
     max-width: 102px;
     max-height: 75px;
@@ -110,25 +114,25 @@ input{
 }
 
 #botonesAtaques button:hover{
-    box-shadow: 0 0 5px 5px rgb(255, 255, 255); /* Sombra */ 
+    box-shadow: 0 0 50px 5px rgb(255, 255, 255); /* Sombra */ 
 }
 
 #boton-fuego{
     color: aliceblue;
     background-color: rgb(235, 152, 0);
-    box-shadow: 0 0 8px 3px rgb(235, 152, 0);
+    box-shadow: 0 0 50px 1px rgb(235, 152, 0);
 }
 
 #boton-agua{
     color: aliceblue;
     background-color: rgb(20, 176, 238);
-    box-shadow: 0 0 8px 3px rgb(20, 176, 238); /* Sombra */ 
+    box-shadow: 0 0 50px 1px rgb(20, 176, 238); /* Sombra */ 
 }
 
 #boton-tierra{
     color: aliceblue;
     background-color: rgb(43, 215, 0);
-    box-shadow: 0 0 8px 3px rgb(43, 215, 0); /* Sombra */ 
+    box-shadow: 0 0 50px 1px rgb(43, 215, 0); /* Sombra */ 
 }
 
 

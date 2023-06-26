@@ -172,16 +172,27 @@ function revisarGanador(){
 }
 
 function CrearMensajesCombate(){
-    let NuevoMensaje = document.createElement('p');
-    NuevoMensaje.innerHTML = 'Tu '+ pokemonJugador + ' ataco con ' + ataqueJugador + ', el ' + pokemonEnemigo + ' del enemigo ataco con ' + ataqueEnemigo + ' -> ' + resultadoBatalla;
-    let seccionMensajes = document.getElementById('mensajes');
-    seccionMensajes.appendChild(NuevoMensaje);
+    let eResultado = document.createElement('p');
+    let eAtaqueJugador = document.createElement('p');
+    let eAtaqueEnemigo = document.createElement('p');
+
+    eResultado.innerHTML = resultadoBatalla;
+    eAtaqueJugador.innerHTML = ataqueJugador;
+    eAtaqueEnemigo.innerHTML = ataqueEnemigo;
+    
+    let divResultado = document.getElementById('resultado');
+    let divAtaqueJugador = document.getElementById('ataque-jugador');
+    let divAtaqueEnemigo = document.getElementById('ataque-enemigo');
+
+    divResultado.appendChild(eResultado);
+    divAtaqueJugador.appendChild(eAtaqueJugador);
+    divAtaqueEnemigo.appendChild(eAtaqueEnemigo);
 }   
 
 function crearMensajeGanador(mensaje){
     let NuevoMensaje = document.createElement('p');
     NuevoMensaje.innerHTML = mensaje;
-    let seccionMensajes = document.getElementById('mensajes');
+    let seccionMensajes = document.getElementById('ganador');
     seccionMensajes.appendChild(NuevoMensaje);
     deshabilitarBotonesAtaque();
     document.getElementById('bReiniciar').style.display = 'block';
