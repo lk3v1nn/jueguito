@@ -14,12 +14,38 @@ body{
     align-items: center;
 }
 
+#seccionInicio{
+    height: auto;
+    width: auto;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .titulo {
     font-weight: 100;
     color: rgb(249, 255, 67);
     filter: drop-shadow(1px 2px 8px rgb(12, 21, 66));
     font-size: 40px;
     font-family: 'Press Start 2P', cursive;
+}
+
+#botonIniciar{
+    border: 0;
+    WIDTH: 120PX;
+    HEIGHT: 40px;
+    margin: 40px 10px 10px;
+    font-family: 'Press Start 2P';
+    background-color: rgba(255, 255, 255, 0.163);
+    color: rgb(0, 177, 187);
+    /* box-shadow: 2px 2px 0px 4px rgba(244, 145, 59, 1); */
+    box-shadow: 2px 2px 5px 3px rgba(17, 62, 64, 0.534); /* Sombra */ 
+}
+#botonIniciar:hover{
+    background-color: rgb(255, 247, 0);
+    box-shadow: 3px 3px 10px 5px rgba(17, 62, 64, 0.534); /* Sombra */
 }
 
 .cajon{
@@ -33,6 +59,10 @@ body{
     border-radius: 5px; /* Borde redondeado */
     box-shadow: 0 2px 25px rgba(17, 62, 64, 0.534); /* Sombra */ 
     /* background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));    */
+}
+
+.cajon h2{
+    margin: 10px;
 }
 
 #pokemons{
@@ -51,8 +81,8 @@ body{
     padding: 10px;
     background-color: rgba(240, 248, 255, 0.3);
     width: 120px;
-    height: 100px;
-    border-radius: 5px;
+    height: 120px;
+    border-radius: 0px 0px 30px 0px;
 }
 
 .tarjetaPokemon img{
@@ -67,4 +97,48 @@ input{
 .animacionSeleccion{
     background-color: aqua;
 }
-  
+
+#botonesAtaques button{
+    border: 0;
+    width: 120PX;
+    HEIGHT: 40px;
+    margin: 5px;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    /* color: rgb(0, 177, 187); */
+    /* background-color: rgba(255, 255, 255, 0.496); */
+}
+
+#botonesAtaques button:hover{
+    box-shadow: 0 0 5px 5px rgb(255, 255, 255); /* Sombra */ 
+}
+
+#boton-fuego{
+    color: aliceblue;
+    background-color: rgb(235, 152, 0);
+    box-shadow: 0 0 8px 3px rgb(235, 152, 0);
+}
+
+#boton-agua{
+    color: aliceblue;
+    background-color: rgb(20, 176, 238);
+    box-shadow: 0 0 8px 3px rgb(20, 176, 238); /* Sombra */ 
+}
+
+#boton-tierra{
+    color: aliceblue;
+    background-color: rgb(43, 215, 0);
+    box-shadow: 0 0 8px 3px rgb(43, 215, 0); /* Sombra */ 
+}
+
+
+
+#boton-reiniciar{
+    border: 0;
+    WIDTH: 120PX;
+    HEIGHT: 40px;
+    margin: 10px;
+    font-family: 'Press Start 2P';
+    color: rgb(0, 177, 187);
+    background-color: rgba(255, 255, 255, 0.496);
+}

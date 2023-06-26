@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <h1 class="animate__animated animate__lightSpeedInLeft">💧🔥🪴💧🔥🪴💧</h1>
-    <h1 class="animate__animated animate__flip titulo" >POKEMON</h1>
-    <h1 class="animate__animated animate__lightSpeedInRight">💧🔥🪴💧🔥🪴💧</h1>
-    <br>
-    <button id="botonIniciar">Iniciar</button>
+    <section id="seccionInicio">
+        <h1 class="animate__animated animate__lightSpeedInLeft">💧🔥🪴💧🔥🪴💧</h1>
+        <h1 class="animate__animated animate__flip titulo" >POKEMON</h1>
+        <h1 class="animate__animated animate__lightSpeedInRight">💧🔥🪴💧🔥🪴💧</h1>
+        <button id="botonIniciar">Iniciar</button>
+    </section>
+    
     <section id="seleccionar-monstruo" class="animate__animated animate__zoomInUp cajon " style="display: none;">
         <h2>Escoge un pokemon</h2>
         
@@ -71,24 +73,29 @@
     
     <section id="seleccionar-ataque" class="cajon" style="display: none;">
         <h2>Elige un ataque</h2>
-
-        <p>Tu pokemon <span id="span-nombre-pokemon"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>El pokemon <span id="span-pokemon-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-
-        <p>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tierra">Tierra 🪴</button>
-        </p>
-    </section>
-
-    <section id="mensajes">
         
-    </section>
+        <div id="botonesAtaques">
+            <button id="boton-tierra">Tierra</button>
+            <button id="boton-agua">Agua</button>
+            <button id="boton-fuego">Fuego</button>
+        </div>
 
-    <section id="bReiniciar" style="display: none;">
-        <button id="boton-reiniciar">Reiniciar</button>
-    </section>
+        <div>
+            <section id="mensajes">
+            </section>
+        
+            <section id="bReiniciar" style="display: none;">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+        </div>
+            
+        <div>
+            <p>Tu pokemon <span id="span-nombre-pokemon"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+            <p>El pokemon <span id="span-pokemon-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        </div>
+      </section>
+
+
 
 </body>
 </html>
