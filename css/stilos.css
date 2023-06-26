@@ -6,12 +6,12 @@
 }
 
 body{
-    background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));
 }
 
 #seccionInicio{
