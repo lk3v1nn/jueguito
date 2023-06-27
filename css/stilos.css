@@ -106,7 +106,7 @@ input{
     border: 0;
     width: 120PX;
     HEIGHT: 40px;
-    margin: 5px;
+    margin: 5px 5px 25px;
     font-family: 'Press Start 2P';
     font-size: 10px;
     /* color: rgb(0, 177, 187); */
@@ -138,11 +138,25 @@ input{
 
 
 #boton-reiniciar{
-    border: 0;
-    WIDTH: 120PX;
-    HEIGHT: 40px;
+    width: auto;
+    height: auto;
     margin: 10px;
+    padding: 10px;
     font-family: 'Press Start 2P';
+    font-size: 12px;
+    border: 0;
     color: rgb(0, 177, 187);
-    background-color: rgba(255, 255, 255, 0.496);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px 2px white;
+}
+#boton-reiniciar:hover{
+    background-color: aliceblue;
+    box-shadow: 0 0 10px 3px white;
+}
+
+#resultado{
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(240, 248, 255, 0.321);
 }

@@ -172,21 +172,20 @@ function revisarGanador(){
 }
 
 function CrearMensajesCombate(){
-    let eResultado = document.createElement('p');
-    let eAtaqueJugador = document.createElement('p');
-    let eAtaqueEnemigo = document.createElement('p');
-
-    eResultado.innerHTML = resultadoBatalla;
-    eAtaqueJugador.innerHTML = ataqueJugador;
-    eAtaqueEnemigo.innerHTML = ataqueEnemigo;
-    
-    let divResultado = document.getElementById('resultado');
     let divAtaqueJugador = document.getElementById('ataque-jugador');
     let divAtaqueEnemigo = document.getElementById('ataque-enemigo');
 
-    divResultado.appendChild(eResultado);
+    let eAtaqueJugador = document.createElement('p');
+    let eAtaqueEnemigo = document.createElement('p');
+
+    eAtaqueJugador.innerHTML = ataqueJugador;
+    eAtaqueEnemigo.innerHTML = ataqueEnemigo;
+    
     divAtaqueJugador.appendChild(eAtaqueJugador);
     divAtaqueEnemigo.appendChild(eAtaqueEnemigo);
+
+    let divResultado = document.getElementById('resultado');
+    divResultado.innerHTML = resultadoBatalla;
 }   
 
 function crearMensajeGanador(mensaje){
