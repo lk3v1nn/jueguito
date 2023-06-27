@@ -13,12 +13,18 @@ let vidasEnemigo = 3;
 function iniciarJuego(){
     let botonIniciar = document.getElementById('botonIniciar');
     botonIniciar.addEventListener('click', ()=>{
+        ajustarBody();
         SeleccionarPokemonJugador();
         botonIniciar.style.display = 'none';
     });
 
     let buttonReiniciar = document.getElementById('bReiniciar');
     buttonReiniciar.addEventListener('click', reinciarJuego);
+}
+
+function ajustarBody(){
+    let body = document.querySelector('body');
+    body.style.height = 'auto';
 }
 
 function SeleccionarPokemonJugador(){
