@@ -23,8 +23,7 @@ function iniciarJuego(){
 }
 
 function ajustarBody(){
-    let body = document.querySelector('body');
-    body.style.height = 'auto';
+    document.querySelector('body').style.height = 'auto';
 }
 
 function SeleccionarPokemonJugador(){

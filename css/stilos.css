@@ -112,30 +112,31 @@ input{
     /* color: rgb(0, 177, 187); */
     /* background-color: rgba(255, 255, 255, 0.496); */
 }
-
 #botonesAtaques button:hover{
-    box-shadow: 0 0 50px 5px rgb(255, 255, 255); /* Sombra */ 
+    box-shadow: 0 0 40px 5px rgb(255, 255, 255); /* Sombra */ 
+}
+#botonesAtaques button:disabled{
+    background-color: #a845e421;
+    box-shadow: 0 0 0 0 transparent; /* Sombra */ 
 }
 
 #boton-fuego{
     color: aliceblue;
     background-color: rgb(235, 152, 0);
-    box-shadow: 0 0 50px 1px rgb(235, 152, 0);
+    /* box-shadow: 0 0 50px 1px rgb(235, 152, 0); */
 }
 
 #boton-agua{
     color: aliceblue;
     background-color: rgb(20, 176, 238);
-    box-shadow: 0 0 50px 1px rgb(20, 176, 238); /* Sombra */ 
+    /* box-shadow: 0 0 50px 1px rgb(20, 176, 238); Sombra  */
 }
 
 #boton-tierra{
     color: aliceblue;
     background-color: rgb(43, 215, 0);
-    box-shadow: 0 0 50px 1px rgb(43, 215, 0); /* Sombra */ 
+    /* box-shadow: 0 0 50px 1px rgb(43, 215, 0); Sombra  */
 }
-
-
 
 #boton-reiniciar{
     width: auto;
@@ -147,7 +148,7 @@ input{
     border: 0;
     color: rgb(0, 177, 187);
     background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 10px 2px white;
+    box-shadow: 2px 2px 2px 1px rgb(107, 107, 107);
 }
 #boton-reiniciar:hover{
     background-color: aliceblue;
