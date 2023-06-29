@@ -168,11 +168,11 @@ function controlVidasEnemigo(vida){
 function revisarGanador(){
     if (vidasJugador == 0) {
         mensajeDeVoz('PERDISTE');
-        crearMensajeGanador('Has perdido 😭😭😭');
+        crearMensajeGanador('PERDISTE 😭😭😭');
     }
     else if (vidasEnemigo == 0) {
         mensajeDeVoz('GANASTE');
-        crearMensajeGanador('🎉🎉🎉     Has ganado 🎉🎉🎉');
+        crearMensajeGanador('🎉🎉🎉 GANASTE 🎉🎉🎉');
     }
 }
 

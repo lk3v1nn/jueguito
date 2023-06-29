@@ -17,7 +17,7 @@ body{
 #seccionInicio{
     height: auto;
     width: auto;
-    margin: 10px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ body{
     background-color: rgba(255, 255, 255, 0.163);
     color: rgb(0, 177, 187);
     /* box-shadow: 2px 2px 0px 4px rgba(244, 145, 59, 1); */
-    box-shadow: 2px 2px 5px 3px rgba(17, 62, 64, 0.534); /* Sombra */ 
+    box-shadow: 2px 2px 2px 2px rgba(17, 62, 64, 0.534); /* Sombra */ 
 }
 #botonIniciar:hover{
     background-color: rgb(255, 247, 0);
@@ -57,7 +57,20 @@ body{
     padding: 10px;
     border: 1px solid rgba(251, 251, 251, 0.2);
     border-radius: 5px; /* Borde redondeado */
-    box-shadow: 0 2px 25px rgba(17, 62, 64, 0.534); /* Sombra */ 
+    box-shadow: 0 2px 10px rgba(17, 62, 64, 0.534); /* Sombra */ 
+    /* background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));    */
+}
+.cajon2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid rgba(251, 251, 251, 0.2);
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 2px 10px rgba(17, 62, 64, 0.534); /* Sombra */ 
     /* background:linear-gradient(to right, rgba(244, 145, 59, 1), rgba(82, 233, 253, 1), rgba(94, 255, 102, 1));    */
 }
 
@@ -115,7 +128,7 @@ input{
     /* background-color: rgba(255, 255, 255, 0.496); */
 }
 #botonesAtaques button:hover{
-    box-shadow: 0 0 40px 5px rgb(255, 255, 255); /* Sombra */ 
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255); /* Sombra */ 
 }
 #botonesAtaques button:disabled{
     background-color: #0220ff14;
@@ -142,10 +155,11 @@ input{
 #resultados{
     width: 100%;
     padding: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     background-color: rgba(240, 248, 255, 0.295);
+    box-shadow: 1px 1px 2px 1px rgb(107, 107, 107);
 }
 #boton-reiniciar{
     width: auto;
@@ -155,13 +169,12 @@ input{
     font-family: 'Press Start 2P';
     font-size: 12px;
     border: 0;
-    color: rgb(0, 177, 187);
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 2px 2px 2px 1px rgb(107, 107, 107);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 177, 130, 0.334);
 }
 #boton-reiniciar:hover{
-    background-color: aliceblue;
-    box-shadow: 0 0 8px 2px white;
+    color: rgb(0, 167, 197);
+    background-color: rgba(240, 248, 255, 0.825);
 }
 
 #resultado{
@@ -170,3 +183,4 @@ input{
 #ganador{
     text-align: center;
 }
+
