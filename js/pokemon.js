@@ -18,7 +18,7 @@ function iniciarJuego(){
         botonIniciar.style.display = 'none';
     });
 
-    let buttonReiniciar = document.getElementById('bReiniciar');
+    let buttonReiniciar = document.getElementById('boton-reiniciar');
     buttonReiniciar.addEventListener('click', reinciarJuego);
 }
 
@@ -172,7 +172,7 @@ function revisarGanador(){
     }
     else if (vidasEnemigo == 0) {
         mensajeDeVoz('GANASTE');
-        crearMensajeGanador('Has ganado 🎉🎉🎉');
+        crearMensajeGanador('🎉🎉🎉     Has ganado 🎉🎉🎉');
     }
 }
 
@@ -199,13 +199,15 @@ function crearMensajeGanador(mensaje){
     let seccionMensajes = document.getElementById('ganador');
     seccionMensajes.appendChild(NuevoMensaje);
     deshabilitarBotonesAtaque();
-    document.getElementById('bReiniciar').style.display = 'block';
+    document.getElementById('resultado').style.display = 'none';
+    document.getElementById('boton-reiniciar').style.display = 'block';
 } 
 
 function deshabilitarBotonesAtaque(){
     document.getElementById('boton-fuego').disabled = true;
     document.getElementById('boton-agua').disabled = true;
     document.getElementById('boton-tierra').disabled = true;
+    document.getElementById('botonesAtaques').style.display = 'none';
 }
 
 function reinciarJuego(){
@@ -222,3 +224,4 @@ function mensajeDeVoz(texto){
     // Reproducir mensaje de voz
     synthesis.speak(msg);
 }
+
