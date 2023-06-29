@@ -101,7 +101,9 @@ input{
 .animacionSeleccion{
     background-color: aqua;
 }
-
+#botonesAtaques{
+    text-align: center;
+}
 #botonesAtaques button{
     border: 0;
     width: 120PX;
@@ -116,7 +118,7 @@ input{
     box-shadow: 0 0 40px 5px rgb(255, 255, 255); /* Sombra */ 
 }
 #botonesAtaques button:disabled{
-    background-color: #a845e421;
+    background-color: #0220ff14;
     box-shadow: 0 0 0 0 transparent; /* Sombra */ 
 }
 
@@ -137,11 +139,18 @@ input{
     background-color: rgb(43, 215, 0);
     /* box-shadow: 0 0 50px 1px rgb(43, 215, 0); Sombra  */
 }
-
+#resultados{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 248, 255, 0.295);
+}
 #boton-reiniciar{
     width: auto;
     height: auto;
-    margin: 10px;
+    margin: 10px 0;
     padding: 10px;
     font-family: 'Press Start 2P';
     font-size: 12px;
@@ -152,12 +161,12 @@ input{
 }
 #boton-reiniciar:hover{
     background-color: aliceblue;
-    box-shadow: 0 0 10px 3px white;
+    box-shadow: 0 0 8px 2px white;
 }
 
 #resultado{
-    height: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: rgba(240, 248, 255, 0.321);
+    text-align: center;
+}
+#ganador{
+    text-align: center;
 }
