@@ -42,7 +42,7 @@ function SeleccionarPokemonJugador(){
     let Volcanion = document.getElementById('Volcanion');
     let Rattata = document.getElementById('Rattata');
     let Sydos = document.getElementById('Sydos');
-    let spanNombrePokemon = document.getElementById('span-nombre-pokemon');
+    let spanNombrePokemon = document.getElementById('nombre-pokemon-jugador');
 
     function asignarPokemonALaVista(){
         spanNombrePokemon.innerHTML = pokemonJugador;
@@ -92,7 +92,7 @@ function SeleccionarPokemonEnemigo(){
     let PokemonLista = ['Charmander', 'Vaporeon', 'Bulbasour', 'Volcanion', 'Rattata', 'Sydos'];
     pokemonEnemigo = PokemonLista[numeroRandom];
 
-    let spanPokemonEnemigo = document.getElementById('span-pokemon-enemigo');
+    let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
     spanPokemonEnemigo.innerHTML = pokemonEnemigo;  
 }
 

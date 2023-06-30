@@ -73,26 +73,35 @@
 
     </section>
     
-    <section id="seleccionar-ataque" class="cajon2" style="display: none;">
+    <section id="seleccionar-ataque" style="display: none;">
        
-        <div id="botonesAtaques">
-            <h2>Elige un ataque</h2>
-            <button id="boton-tierra">Tierra</button>
-            <button id="boton-agua">Agua</button>
-            <button id="boton-fuego">Fuego</button>
+        <div class="cajon">
+            <div id="botonesAtaques">
+                <h2>Elige un ataque</h2>
+                <button id="boton-tierra">Tierra</button>
+                <button id="boton-agua">Agua</button>
+                <button id="boton-fuego">Fuego</button>
+            </div>
+    
+            <div id="resultados">
+                <div id="ganador"></div>
+                <button id="boton-reiniciar" style="display: none;">Volver a jugar!!</button>
+                <div id="resultado"> Buena suerte 👍</div>
+            </div>
         </div>
 
-        <div id="resultados">
-            <div id="ganador"></div>
-            <button id="boton-reiniciar" style="display: none;">Volver a jugar!!</button>
-            <div id="resultado"> Buena suerte 👍</div>
-        </div>
             
-        <div>
-            <div id="ataque-jugador"></div>
-            <div id="ataque-enemigo"></div>
-            <p>Tu pokemon <span id="span-nombre-pokemon"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-            <p>El pokemon <span id="span-pokemon-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        <div class="ataques">
+            <div class="historialAtaques">
+                <p id="vidas-jugador">3</p>
+                <p id="nombre-pokemon-jugador"></p>
+                <div id="ataque-jugador"></div>
+            </div>
+            <div class="historialAtaques">
+                <p id="vidas-enemigo">3</p>
+                <p id="nombre-pokemon-enemigo"></p>
+                <div id="ataque-enemigo"></div>
+            </div>
         </div>
       </section>
 
