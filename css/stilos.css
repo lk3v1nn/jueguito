@@ -49,6 +49,7 @@ body{
 }
 
 .cajon{
+    margin-bottom: 20px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -186,10 +187,14 @@ input{
     text-align: center; 
 }
 
-
+@media (max-width: 520px) {
+    .cajon{
+        max-width: 375px;
+    }
+}
 
 @media (max-width: 400px) {
     .cajon{
-        max-width: 300px;
+        max-width: 320px;
     }
 }
