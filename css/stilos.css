@@ -185,3 +185,11 @@ input{
 .historialAtaques{
     text-align: center; 
 }
+
+
+
+@media (max-width: 400px) {
+    .cajon{
+        max-width: 300px;
+    }
+}
