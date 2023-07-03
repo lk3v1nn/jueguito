@@ -99,9 +99,28 @@ input{
     display: none;
 }
 
+input:checked + label{
+    background-color: rgba(255, 255, 255, 0.613);
+}
+
 .animacionSeleccion{
     background-color: aqua;
 }
+
+#boton-seleccionar-pokemon{
+    border: 0;
+    padding: 10px;
+    margin: 20px 0 10px;
+    font-family: 'Press Start 2P';
+    background-color: rgba(255, 255, 255, 0.163);
+    color: rgb(0, 177, 187);
+    box-shadow: 1px 1px 2px 1px rgba(17, 62, 64, 0.534); /* Sombra */   
+}
+#boton-seleccionar-pokemon:hover{
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: 0 0 10px 5px rgb(255, 255, 255); Sombra  */
+}
+
 #seleccionar-ataque{
     display: flex;
     flex-direction: column;

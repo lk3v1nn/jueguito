@@ -13,9 +13,9 @@ let vidasEnemigo = 3;
 function iniciarJuego(){
     let botonIniciar = document.getElementById('botonIniciar');
     botonIniciar.addEventListener('click', ()=>{
+        botonIniciar.style.display = 'none';
         ajustarBody();
         SeleccionarPokemonJugador();
-        botonIniciar.style.display = 'none';
     });
 
     let buttonReiniciar = document.getElementById('boton-reiniciar');
@@ -27,52 +27,60 @@ function ajustarBody(){
 }
 
 function SeleccionarPokemonJugador(){
-    
-    // pokemonJugador = document.getElementById('Charmander').checked ? 'Charmander' :
-    //                 document.getElementById('Vaporeon').checked ? 'Vaporeon' : 
-    //                 document.getElementById('Bulbasour').checked ? 'Bulbasour' : 
-    //                 document.getElementById('Volcanion').checked ? 'Volcanion' : 
-    //                 document.getElementById('Rattata').checked ? 'Rattata' : 
-    //                 document.getElementById('Sydos').checked ? 'Sydos' : '';
     document.getElementById('seleccionar-monstruo').style.display = 'flex';
 
-    let Charmander = document.getElementById('Charmander');
-    let Vaporeon = document.getElementById('Vaporeon');
-    let Bulbasour = document.getElementById('Bulbasour');
-    let Volcanion = document.getElementById('Volcanion');
-    let Rattata = document.getElementById('Rattata');
-    let Sydos = document.getElementById('Sydos');
-    let spanNombrePokemon = document.getElementById('nombre-pokemon-jugador');
-
-    function asignarPokemonALaVista(){
-        spanNombrePokemon.innerHTML = pokemonJugador;
-        deshabilitarSelectPokemon();
+    function buscarPokemonSeleccionado(){
+    pokemonJugador = document.getElementById('Charmander').checked? 'Charmander' :
+                    document.getElementById('Vaporeon').checked? 'Vaporeon' :
+                    document.getElementById('Bulbasour').checked? 'Bulbasour' :
+                    document.getElementById('Volcanion').checked? 'Volcanion' :
+                    document.getElementById('Rattata').checked? 'Rattata' :
+                    document.getElementById('Sydos').checked? 'Sydos' : '';
     }
 
-    Charmander.addEventListener('click', () =>{
-        pokemonJugador = "Charmander";
-        asignarPokemonALaVista();
-    });
-    Vaporeon.addEventListener('click', () =>{
-        pokemonJugador = "Vaporeon";
-        asignarPokemonALaVista(pokemonJugador);
-    });
-    Bulbasour.addEventListener('click', () =>{
-        pokemonJugador = "Bulbasour";
-        asignarPokemonALaVista(pokemonJugador);
-    });
-    Volcanion.addEventListener('click', () =>{
-        pokemonJugador = "Volcanion";
-        asignarPokemonALaVista(pokemonJugador);
-    });
-    Rattata.addEventListener('click', () =>{
-        pokemonJugador = "Rattata";
-        asignarPokemonALaVista(pokemonJugador);
-    });            
-    Sydos.addEventListener('click', () =>{
-        pokemonJugador = "Sydos";
-        asignarPokemonALaVista(pokemonJugador);
-    });    
+    let boton_seleccionar_pokemon = document.getElementById('boton-seleccionar-pokemon');
+    boton_seleccionar_pokemon.addEventListener('click', () => {
+        buscarPokemonSeleccionado();
+        spanNombrePokemon = document.getElementById('nombre-pokemon-jugador').innerHTML = pokemonJugador;
+        deshabilitarSelectPokemon();});
+    
+    // let Charmander = document.getElementById('Charmander');
+    // let Vaporeon = document.getElementById('Vaporeon');
+    // let Bulbasour = document.getElementById('Bulbasour');
+    // let Volcanion = document.getElementById('Volcanion');
+    // let Rattata = document.getElementById('Rattata');
+    // let Sydos = document.getElementById('Sydos');
+    // let spanNombrePokemon = document.getElementById('nombre-pokemon-jugador');
+
+    // function asignarPokemonALaVista(){
+    //     spanNombrePokemon.innerHTML = pokemonJugador;
+    //     deshabilitarSelectPokemon();
+    // }
+
+    // Charmander.addEventListener('click', () =>{
+    //     pokemonJugador = "Charmander";
+    //     asignarPokemonALaVista();
+    // });
+    // Vaporeon.addEventListener('click', () =>{
+    //     pokemonJugador = "Vaporeon";
+    //     asignarPokemonALaVista(pokemonJugador);
+    // });
+    // Bulbasour.addEventListener('click', () =>{
+    //     pokemonJugador = "Bulbasour";
+    //     asignarPokemonALaVista(pokemonJugador);
+    // });
+    // Volcanion.addEventListener('click', () =>{
+    //     pokemonJugador = "Volcanion";
+    //     asignarPokemonALaVista(pokemonJugador);
+    // });
+    // Rattata.addEventListener('click', () =>{
+    //     pokemonJugador = "Rattata";
+    //     asignarPokemonALaVista(pokemonJugador);
+    // });            
+    // Sydos.addEventListener('click', () =>{
+    //     pokemonJugador = "Sydos";
+    //     asignarPokemonALaVista(pokemonJugador);
+    // });    
 }
 
 function deshabilitarSelectPokemon(){
