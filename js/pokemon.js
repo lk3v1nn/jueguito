@@ -41,7 +41,12 @@ function SeleccionarPokemonJugador(){
     let boton_seleccionar_pokemon = document.getElementById('boton-seleccionar-pokemon');
     boton_seleccionar_pokemon.addEventListener('click', () => {
         buscarPokemonSeleccionado();
+
         spanNombrePokemon = document.getElementById('nombre-pokemon-jugador').innerHTML = pokemonJugador;
+        
+        let imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
+        imgPokemonJugador.src = `img/${pokemonJugador}.png`;
+
         deshabilitarSelectPokemon();});
     
     // let Charmander = document.getElementById('Charmander');
@@ -102,6 +107,9 @@ function SeleccionarPokemonEnemigo(){
 
     let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
     spanPokemonEnemigo.innerHTML = pokemonEnemigo;  
+
+    let imgPokemonEnemigo = document.getElementById('imagen-pokemon-enemigo');
+    imgPokemonEnemigo.src = `img/${pokemonEnemigo}.png`;
 }
 
 function ElegirAtaquePokemon(){
@@ -164,13 +172,13 @@ function CombatePokemon(ataqueJugador, ataqueEnemigo){
 function controlVidasJugador(vida){
     let spanVidasJugador = document.getElementById('vidas-jugador');
     vidasJugador += vida;
-    spanVidasJugador.innerHTML = vidasJugador;
+    spanVidasJugador.innerHTML = vidasJugador + (' Vidas');
 }
 
 function controlVidasEnemigo(vida){
     let spanVidasEnemigo = document.getElementById('vidas-enemigo');
     vidasEnemigo += vida;
-    spanVidasEnemigo.innerHTML = vidasEnemigo;
+    spanVidasEnemigo.innerHTML = vidasEnemigo + (' Vidas');
 }
 
 function revisarGanador(){
