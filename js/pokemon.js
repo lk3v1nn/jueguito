@@ -1,6 +1,7 @@
 // @ts-nocheck
 window.addEventListener('load', iniciarJuego);
 
+let ListaDePokemons = ['Charmander', 'Vaporeon', 'Bulbasour', 'Volcanion', 'Rattata', 'Sydos'];
 let listaAtaquesDisponibles = ['Fuego 🔥', 'Agua 💧', 'Tierra 🪴'];
 let pokemonJugador;
 let pokemonEnemigo;
@@ -10,15 +11,35 @@ let resultadoBatalla;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
+let botonIniciar = document.getElementById('botonIniciar');
+let buttonReiniciar = document.getElementById('boton-reiniciar');
+
+let boton_seleccionar_pokemon = document.getElementById('boton-seleccionar-pokemon');
+let imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
+
+let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
+let imgPokemonEnemigo = document.getElementById('imagen-pokemon-enemigo');
+
+let botonFuego = document.getElementById('boton-fuego');
+let botonAgua = document.getElementById('boton-agua');
+let botonTierra = document.getElementById('boton-tierra');
+
+let spanVidasJugador = document.getElementById('vidas-jugador');
+let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+
+let divAtaqueJugador = document.getElementById('ataque-jugador');
+let divAtaqueEnemigo = document.getElementById('ataque-enemigo');
+let divResultado = document.getElementById('resultado');
+
+let seccionMensajes = document.getElementById('ganador');
+
 function iniciarJuego(){
-    let botonIniciar = document.getElementById('botonIniciar');
     botonIniciar.addEventListener('click', ()=>{
         botonIniciar.style.display = 'none';
         ajustarBody();
         SeleccionarPokemonJugador();
     });
 
-    let buttonReiniciar = document.getElementById('boton-reiniciar');
     buttonReiniciar.addEventListener('click', reinciarJuego);
 }
 
@@ -38,17 +59,11 @@ function SeleccionarPokemonJugador(){
                     document.getElementById('Sydos').checked? 'Sydos' : '';
     }
 
-    let boton_seleccionar_pokemon = document.getElementById('boton-seleccionar-pokemon');
     boton_seleccionar_pokemon.addEventListener('click', () => {
         buscarPokemonSeleccionado();
-
         spanNombrePokemon = document.getElementById('nombre-pokemon-jugador').innerHTML = pokemonJugador;
-        
-        let imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
         imgPokemonJugador.src = `img/${pokemonJugador}.png`;
-
         deshabilitarSelectPokemon();});
-    
     // let Charmander = document.getElementById('Charmander');
     // let Vaporeon = document.getElementById('Vaporeon');
     // let Bulbasour = document.getElementById('Bulbasour');
@@ -99,26 +114,18 @@ function deshabilitarSelectPokemon(){
 }
 
 function SeleccionarPokemonEnemigo(){
-
     let numeroRandom = parseInt(Math.random()*6);
 
-    let PokemonLista = ['Charmander', 'Vaporeon', 'Bulbasour', 'Volcanion', 'Rattata', 'Sydos'];
-    pokemonEnemigo = PokemonLista[numeroRandom];
+    pokemonEnemigo = ListaDePokemons[numeroRandom];
 
-    let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
     spanPokemonEnemigo.innerHTML = pokemonEnemigo;  
 
-    let imgPokemonEnemigo = document.getElementById('imagen-pokemon-enemigo');
     imgPokemonEnemigo.src = `img/${pokemonEnemigo}.png`;
 }
 
 function ElegirAtaquePokemon(){
     document.getElementById('seleccionar-ataque').style.display = 'flex';
     mensajeDeVoz('Escoge un ataque');
-
-    let botonFuego = document.getElementById('boton-fuego');
-    let botonAgua = document.getElementById('boton-agua');
-    let botonTierra = document.getElementById('boton-tierra');
 
     botonFuego.addEventListener('click', ()=>{
         ataqueJugador = listaAtaquesDisponibles[0];
@@ -170,13 +177,11 @@ function CombatePokemon(ataqueJugador, ataqueEnemigo){
 }
 
 function controlVidasJugador(vida){
-    let spanVidasJugador = document.getElementById('vidas-jugador');
     vidasJugador += vida;
     spanVidasJugador.innerHTML = vidasJugador + (' Vidas');
 }
 
 function controlVidasEnemigo(vida){
-    let spanVidasEnemigo = document.getElementById('vidas-enemigo');
     vidasEnemigo += vida;
     spanVidasEnemigo.innerHTML = vidasEnemigo + (' Vidas');
 }
@@ -193,9 +198,6 @@ function revisarGanador(){
 }
 
 function CrearMensajesCombate(){
-    let divAtaqueJugador = document.getElementById('ataque-jugador');
-    let divAtaqueEnemigo = document.getElementById('ataque-enemigo');
-
     let eAtaqueJugador = document.createElement('p');
     let eAtaqueEnemigo = document.createElement('p');
 
@@ -205,14 +207,12 @@ function CrearMensajesCombate(){
     divAtaqueJugador.appendChild(eAtaqueJugador);
     divAtaqueEnemigo.appendChild(eAtaqueEnemigo);
 
-    let divResultado = document.getElementById('resultado');
     divResultado.innerHTML = resultadoBatalla;
 }   
 
 function crearMensajeGanador(mensaje){
     let NuevoMensaje = document.createElement('p');
     NuevoMensaje.innerHTML = mensaje;
-    let seccionMensajes = document.getElementById('ganador');
     seccionMensajes.appendChild(NuevoMensaje);
     deshabilitarBotonesAtaque();
     document.getElementById('resultado').style.display = 'none';
