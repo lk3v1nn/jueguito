@@ -33,6 +33,16 @@ let divResultado = document.getElementById('resultado');
 
 let seccionMensajes = document.getElementById('ganador');
 
+class Pokemon {
+    constructor(nombre, imgen,tipo, vida, ataque){    
+        this.nombre = nombre;
+        this.imagen = imgen;
+        this.tipo = tipo;
+        this.vida = vida;       
+        this.ataque = ataque;
+    }
+}
+
 function iniciarJuego(){
     botonIniciar.addEventListener('click', ()=>{
         botonIniciar.style.display = 'none';
