@@ -1,4 +1,5 @@
 // @ts-nocheck
+// ({ plugins: ['jsdom-quokka-plugin'] });
 window.addEventListener('load', iniciarJuego);
 
 let ListaDePokemons = ['Charmander', 'Vaporeon', 'Bulbasour', 'Volcanion', 'Rattata', 'Sydos'];
@@ -6,15 +7,16 @@ let listaAtaquesDisponibles = ['Fuego 🔥', 'Agua 💧', 'Tierra 🪴'];
 let pokemonJugador;
 let pokemonEnemigo;
 let ataqueJugador;
+
 let ataqueEnemigo;
 let resultadoBatalla;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
 let botonIniciar = document.getElementById('botonIniciar');
-let buttonReiniciar = document.getElementById('boton-reiniciar');
+let botonReiniciar = document.getElementById('boton-reiniciar');
 
-let boton_seleccionar_pokemon = document.getElementById('boton-seleccionar-pokemon');
+let botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
 let imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
 
 let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
@@ -33,15 +35,74 @@ let divResultado = document.getElementById('resultado');
 
 let seccionMensajes = document.getElementById('ganador');
 
-class Pokemon {
-    constructor(nombre, imgen,tipo, vida, ataque){    
+let arrPokemones = [];
+
+class clsPokemon {
+    constructor(nombre, imgen,tipo, vida, ataques){    
         this.nombre = nombre;
         this.imagen = imgen;
         this.tipo = tipo;
         this.vida = vida;       
-        this.ataque = ataque;
+        this.ataques = [];
     }
 }
+
+// class clsAtaque {
+//     constructor(nombre, tipo, poder){
+//         this.nombre = nombre;
+//         this.tipo = tipo;
+//         this.poder = poder;
+//     }
+// }
+
+let objVaporeon = new clsPokemon('Vaporeon', 'img/Vaporeon.png', 'agua', 3);
+let objBulbasour = new clsPokemon('Bulbasour', 'img/Bulbasour.png', 'tierra', 3);
+let objVolcanion = new clsPokemon('Volcanion', 'img/Volcanion.png', 'fuego', 3);
+let objRattata = new clsPokemon('Rattata', 'img/Rattata.png', 'tierra', 3);
+let objSydos = new clsPokemon('Sydos', 'img/Sydos.png', 'agua', 3);
+let objCharmander = new clsPokemon('Charmander', 'img/Charmander.png', 'Fuego', 3);    
+
+objVaporeon.ataques.push(   {nombre: '💧', id: 'boton-agua'},
+                            {nombre: '💧', id: 'boton-agua'}, 
+                            {nombre: '💧', id: 'boton-agua'}, 
+                            {nombre: '🪴', id: 'boton-tierra'}, 
+                            {nombre: '🔥', id: 'boton-fuego'});
+
+objBulbasour.ataques.push(  {nombre: '🪴', id: 'boton-tierra'},
+                            {nombre: '🪴', id: 'boton-tierra'}, 
+                            {nombre: '🪴', id: 'boton-tierra'},
+                            {nombre: '💧', id: 'boton-agua'}, 
+                            {nombre: '🔥', id: 'boton-fuego'});
+
+objVolcanion.ataques.push(  {nombre: '🔥', id: 'boton-fuego'},
+                            {nombre: '🔥', id: 'boton-fuego'}, 
+                            {nombre: '🔥', id: 'boton-fuego'}, 
+                            {nombre: '🪴', id: 'boton-tierra'},
+                            {nombre: '💧', id: 'boton-agua'});
+
+objRattata.ataques.push({nombre: '🪴', id: 'boton-tierra'},
+                        {nombre: '🪴', id: 'boton-tierra'},
+                        {nombre: '🪴', id: 'boton-tierra'},
+                        {nombre: '💧', id: 'boton-agua'},
+                        {nombre: '🔥', id: 'boton-fuego'});
+
+objSydos.ataques.push(  {nombre: '💧', id: 'boton-agua'},
+                        {nombre: '💧', id: 'boton-agua'},
+                        {nombre: '💧', id: 'boton-agua'},
+                        {nombre: '🔥', id: 'boton-fuego'}   ,
+                        {nombre: '🪴', id: 'boton-tierra'}  );
+
+objCharmander.ataques.push( {nombre: '🔥', id: 'boton-fuego'},
+                            {nombre: '🔥', id: 'boton-fuego'},
+                            {nombre: '🔥', id: 'boton-fuego'},
+                            {nombre: '💧', id: 'boton-agua'},
+                            {nombre: '🪴', id: 'boton-tierra'});
+
+
+arrPokemones.push(objVaporeon, objBulbasour, objVolcanion, objRattata, objSydos, objCharmander);
+
+console.log(arrPokemones);
+
 
 function iniciarJuego(){
     botonIniciar.addEventListener('click', ()=>{
@@ -50,11 +111,12 @@ function iniciarJuego(){
         SeleccionarPokemonJugador();
     });
 
-    buttonReiniciar.addEventListener('click', reinciarJuego);
+    botonReiniciar.addEventListener('click', reinciarJuego);
 }
 
 function ajustarBody(){
     document.querySelector('body').style.height = 'auto';
+   
 }
 
 function SeleccionarPokemonJugador(){
@@ -69,48 +131,11 @@ function SeleccionarPokemonJugador(){
                     document.getElementById('Sydos').checked? 'Sydos' : '';
     }
 
-    boton_seleccionar_pokemon.addEventListener('click', () => {
+    botonSeleccionarPokemon.addEventListener('click', () => {
         buscarPokemonSeleccionado();
         spanNombrePokemon = document.getElementById('nombre-pokemon-jugador').innerHTML = pokemonJugador;
         imgPokemonJugador.src = `img/${pokemonJugador}.png`;
         deshabilitarSelectPokemon();});
-    // let Charmander = document.getElementById('Charmander');
-    // let Vaporeon = document.getElementById('Vaporeon');
-    // let Bulbasour = document.getElementById('Bulbasour');
-    // let Volcanion = document.getElementById('Volcanion');
-    // let Rattata = document.getElementById('Rattata');
-    // let Sydos = document.getElementById('Sydos');
-    // let spanNombrePokemon = document.getElementById('nombre-pokemon-jugador');
-
-    // function asignarPokemonALaVista(){
-    //     spanNombrePokemon.innerHTML = pokemonJugador;
-    //     deshabilitarSelectPokemon();
-    // }
-
-    // Charmander.addEventListener('click', () =>{
-    //     pokemonJugador = "Charmander";
-    //     asignarPokemonALaVista();
-    // });
-    // Vaporeon.addEventListener('click', () =>{
-    //     pokemonJugador = "Vaporeon";
-    //     asignarPokemonALaVista(pokemonJugador);
-    // });
-    // Bulbasour.addEventListener('click', () =>{
-    //     pokemonJugador = "Bulbasour";
-    //     asignarPokemonALaVista(pokemonJugador);
-    // });
-    // Volcanion.addEventListener('click', () =>{
-    //     pokemonJugador = "Volcanion";
-    //     asignarPokemonALaVista(pokemonJugador);
-    // });
-    // Rattata.addEventListener('click', () =>{
-    //     pokemonJugador = "Rattata";
-    //     asignarPokemonALaVista(pokemonJugador);
-    // });            
-    // Sydos.addEventListener('click', () =>{
-    //     pokemonJugador = "Sydos";
-    //     asignarPokemonALaVista(pokemonJugador);
-    // });    
 }
 
 function deshabilitarSelectPokemon(){
@@ -250,4 +275,3 @@ function mensajeDeVoz(texto){
     // Reproducir mensaje de voz
     synthesis.speak(msg);
 }
-
