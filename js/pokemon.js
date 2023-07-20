@@ -124,7 +124,7 @@ function insertarPokemonesAlDom(){
                 <p>${pokemon.nombre}</p>                    
             </label>
         `;
-    pokemons.innerHTML += plantillaPokemon;
+        pokemons.innerHTML += plantillaPokemon;
     });
 }
 
