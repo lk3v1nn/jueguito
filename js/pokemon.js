@@ -4,6 +4,8 @@ window.addEventListener('load', iniciarJuego);
 
 let ListaDePokemons = ['Charmander', 'Vaporeon', 'Bulbasour', 'Volcanion', 'Rattata', 'Sydos'];
 let listaAtaquesDisponibles = ['Fuego 🔥', 'Agua 💧', 'Tierra 🪴'];
+
+let plantillaPokemon;
 let pokemonJugador;
 let pokemonEnemigo;
 let ataqueJugador;
@@ -13,27 +15,29 @@ let resultadoBatalla;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
-let botonIniciar = document.getElementById('botonIniciar');
-let botonReiniciar = document.getElementById('boton-reiniciar');
+const pokemons = document.getElementById('pokemons');
 
-let botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
-let imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
+const botonIniciar = document.getElementById('botonIniciar');
+const botonReiniciar = document.getElementById('boton-reiniciar');
 
-let spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
-let imgPokemonEnemigo = document.getElementById('imagen-pokemon-enemigo');
+const botonSeleccionarPokemon = document.getElementById('boton-seleccionar-pokemon');
+const imgPokemonJugador = document.getElementById('imagen-pokemon-jugador');
 
-let botonFuego = document.getElementById('boton-fuego');
-let botonAgua = document.getElementById('boton-agua');
-let botonTierra = document.getElementById('boton-tierra');
+const spanPokemonEnemigo = document.getElementById('nombre-pokemon-enemigo');
+const imgPokemonEnemigo = document.getElementById('imagen-pokemon-enemigo');
 
-let spanVidasJugador = document.getElementById('vidas-jugador');
-let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+const botonFuego = document.getElementById('boton-fuego');
+const botonAgua = document.getElementById('boton-agua');
+const botonTierra = document.getElementById('boton-tierra');
 
-let divAtaqueJugador = document.getElementById('ataque-jugador');
-let divAtaqueEnemigo = document.getElementById('ataque-enemigo');
-let divResultado = document.getElementById('resultado');
+const spanVidasJugador = document.getElementById('vidas-jugador');
+const spanVidasEnemigo = document.getElementById('vidas-enemigo');
 
-let seccionMensajes = document.getElementById('ganador');
+const divAtaqueJugador = document.getElementById('ataque-jugador');
+const divAtaqueEnemigo = document.getElementById('ataque-enemigo');
+const divResultado = document.getElementById('resultado');
+
+const seccionMensajes = document.getElementById('ganador');
 
 let arrPokemones = [];
 
@@ -46,14 +50,6 @@ class clsPokemon {
         this.ataques = [];
     }
 }
-
-// class clsAtaque {
-//     constructor(nombre, tipo, poder){
-//         this.nombre = nombre;
-//         this.tipo = tipo;
-//         this.poder = poder;
-//     }
-// }
 
 let objVaporeon = new clsPokemon('Vaporeon', 'img/Vaporeon.png', 'agua', 3);
 let objBulbasour = new clsPokemon('Bulbasour', 'img/Bulbasour.png', 'tierra', 3);
@@ -98,7 +94,6 @@ objCharmander.ataques.push( {nombre: '🔥', id: 'boton-fuego'},
                             {nombre: '💧', id: 'boton-agua'},
                             {nombre: '🪴', id: 'boton-tierra'});
 
-
 arrPokemones.push(objVaporeon, objBulbasour, objVolcanion, objRattata, objSydos, objCharmander);
 
 console.log(arrPokemones);
@@ -108,6 +103,7 @@ function iniciarJuego(){
     botonIniciar.addEventListener('click', ()=>{
         botonIniciar.style.display = 'none';
         ajustarBody();
+        insertarPokemonesAlDom();
         SeleccionarPokemonJugador();
     });
 
@@ -117,6 +113,19 @@ function iniciarJuego(){
 function ajustarBody(){
     document.querySelector('body').style.height = 'auto';
    
+}
+
+function insertarPokemonesAlDom(){
+    arrPokemones.forEach(pokemon => {
+        plantillaPokemon =  `
+            <input type="radio" name="pokemon" id="${pokemon.nombre}">
+            <label class="tarjetaPokemon" for="${pokemon.nombre}" id="lb${pokemon.nombre}">
+                <img src="${pokemon.imagen}" alt="nocargo xd">
+                <p>${pokemon.nombre}</p>                    
+            </label>
+        `;
+    pokemons.innerHTML += plantillaPokemon;
+    });
 }
 
 function SeleccionarPokemonJugador(){
